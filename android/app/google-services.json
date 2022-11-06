@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "212118585365",
+    "project_id": "delivery-person-module",
+    "storage_bucket": "delivery-person-module.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:212118585365:android:cf5b1742c7ef8a80514e1c",
+        "android_client_info": {
+          "package_name": "com.example.delivery_person_app_mvvm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "212118585365-2dp2u9jtuv2lbns1cadge3ke33jtd04p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvfI1vfy602kI35VOLIof6KtZViuE-Dds"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "212118585365-2dp2u9jtuv2lbns1cadge3ke33jtd04p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
