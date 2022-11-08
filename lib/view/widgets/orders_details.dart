@@ -22,29 +22,14 @@ class _OrdersDetailsState extends State<OrdersDetails> {
     target: LatLng(30.3753, 69.3451),
     zoom: 14.4746,
   );
-
   @override
   Widget build(BuildContext context) {
-    // return SizedBox(
-    //   height: MediaQuery.of(context).size.height,
-    //   child: GoogleMap(
-    //     mapType: MapType.normal,
-    //     initialCameraPosition: _kGooglePlex,
-    //     onMapCreated: (GoogleMapController controller) {
-    //       _controller.complete(controller);
-    //     },
-    //   ),
-    // );
-
     return Consumer<DatabaseViewModel>(
       builder: (context, db, _) => FutureBuilder(
         future: db.getOrders(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             var delivery = Delivery.fromDocSnapshot(snapshot.data!.docs[0]);
-            // return Text(
-            //   "${delivery.item}, ${delivery.destination.toString()}",
-            // );
 
             return GoogleMap(
               initialCameraPosition: _kPakistan,
@@ -57,6 +42,14 @@ class _OrdersDetailsState extends State<OrdersDetails> {
                           delivery.destination.latitude,
                           delivery.destination.longitude,
                         ),
+                        onTap: () {
+                          showModalBottomSheet(
+                            context: context,
+                            builder: (context) => DeliveryWidget(
+                              item: delivery.item,
+                            ),
+                          );
+                        },
                       ),
                     )
                     .toList(),
