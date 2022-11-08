@@ -28,5 +28,6 @@ class AuthViewModel extends ChangeNotifier {
   void signOut() async {
     await _firebaseAuthService.logOut();
     _localAuthStatusService.unAuthenticateUser();
+    notifyListeners();
   }
 }

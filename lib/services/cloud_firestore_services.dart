@@ -7,6 +7,7 @@ class CloudFirestoreStorageService {
   final String _userUid = FirebaseAuth.instance.currentUser!.uid;
 
   Future<QuerySnapshot<Map<String, dynamic>>> getAllDelivered() async {
+    debugPrint(_userUid);
     return await _firebaseFirestore
         .collection("deliverers")
         .doc(_userUid)
@@ -26,7 +27,6 @@ class CloudFirestoreStorageService {
   }
 
   Future<QuerySnapshot<Map<String, dynamic>>> getAllOrders() async {
-    debugPrint("The uid is: $_userUid");
     return await _firebaseFirestore
         .collection("deliverers")
         .doc(_userUid)

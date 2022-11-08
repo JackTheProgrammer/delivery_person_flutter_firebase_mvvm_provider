@@ -36,9 +36,9 @@ dependencies:
   firebase_core: ^2.1.1
   flutter:
     sdk: flutter
+  google_maps_flutter: ^2.2.1
   provider: ^6.0.4
   shared_preferences: ^2.0.15
-  syncfusion_flutter_maps: ^20.3.52
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -54,8 +54,8 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
-  assets:
-    - asset/world_map.json
+  # assets:
+  #   - asset/world_map.json
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see

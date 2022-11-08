@@ -1,6 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:syncfusion_flutter_maps/maps.dart';
 
 import '/model/delivery.dart';
 import '/view/widgets/delivery_widget.dart';
@@ -14,42 +16,59 @@ class OrdersDetails extends StatefulWidget {
 }
 
 class _OrdersDetailsState extends State<OrdersDetails> {
+  final Completer<GoogleMapController> _controller = Completer();
+
+  final CameraPosition _kPakistan = const CameraPosition(
+    target: LatLng(30.3753, 69.3451),
+    zoom: 14.4746,
+  );
+
   @override
   Widget build(BuildContext context) {
+    // return SizedBox(
+    //   height: MediaQuery.of(context).size.height,
+    //   child: GoogleMap(
+    //     mapType: MapType.normal,
+    //     initialCameraPosition: _kGooglePlex,
+    //     onMapCreated: (GoogleMapController controller) {
+    //       _controller.complete(controller);
+    //     },
+    //   ),
+    // );
+
     return Consumer<DatabaseViewModel>(
-      builder: (context, db, _) {
-        return FutureBuilder(
-          future: db.getOrders(),
-          builder: (context, snapshot) {
-            return SfMaps(
-              layers: [
-                MapShapeLayer(
-                  initialMarkersCount: snapshot.data!.docs.length,
-                  source: const MapShapeSource.asset("asset/world_map.json"),
-                  markerBuilder: (context, index) {
-                    var delivery =
-                        Delivery.fromDocSnapshot(snapshot.data!.docs[index]);
-                    return MapMarker(
-                      latitude: delivery.destination.latitude,
-                      longitude: delivery.destination.longitude,
-                      child: GestureDetector(
-                        onTap: () {
-                          showModalBottomSheet(
-                            context: context,
-                            builder: (context) => DeliveryWidget(
-                              item: delivery.item,
-                            ),
-                          );
-                        },
+      builder: (context, db, _) => FutureBuilder(
+        future: db.getOrders(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            var delivery = Delivery.fromDocSnapshot(snapshot.data!.docs[0]);
+            // return Text(
+            //   "${delivery.item}, ${delivery.destination.toString()}",
+            // );
+
+            return GoogleMap(
+              initialCameraPosition: _kPakistan,
+              markers: Set.of(
+                snapshot.data!.docs
+                    .map(
+                      (documentSnapshot) => Marker(
+                        markerId: MarkerId(documentSnapshot.id),
+                        position: LatLng(
+                          delivery.destination.latitude,
+                          delivery.destination.longitude,
+                        ),
                       ),
-                    );
-                  },
-                ),
-              ],
+                    )
+                    .toList(),
+              ),
             );
-          },
-        );
-      },
+          }
+
+          return const Text(
+            "No data",
+          );
+        },
+      ),
     );
   }
 }

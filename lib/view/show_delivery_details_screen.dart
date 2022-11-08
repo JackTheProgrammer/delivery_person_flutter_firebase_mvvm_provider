@@ -1,3 +1,4 @@
+import 'package:delivery_person_app_mvvm/core/color_schema.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -13,34 +14,36 @@ class ShowDeliveryDetailsScreen extends StatefulWidget {
 }
 
 class _ShowDeliveryDetailsScreenState extends State<ShowDeliveryDetailsScreen> {
+  List<Widget> scaffoldBody = const <Widget>[
+    OrdersDetails(),
+    Text("Some random text"),
+  ];
+
+  int _index = 0;
+
+  void _onTapped(int index) {
+    setState(() {
+      _index = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: DefaultTabController(
-        length: 2,
-        child: Consumer<AuthViewModel>(
-          builder: (context, auth, _) {
-            return Scaffold(
-              appBar: AppBar(
-                bottom: const TabBar(
-                  tabs: [
-                    Tab(
-                      text: "1",
-                    ),
-                    Tab(
-                      text: "2",
-                    ),
-                  ],
-                ),
-              ),
-              body: const TabBarView(
-                children: [
-                  OrdersDetails(),
-                  Text("Data 2"),
-                ],
-              ),
-            );
-          },
+      child: Scaffold(
+        body: scaffoldBody.elementAt(_index),
+        bottomNavigationBar: BottomNavigationBar(
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.map),
+              label: "Orders",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.delivery_dining),
+              label: "Delivered",
+            ),
+          ],
+          onTap: _onTapped,
         ),
       ),
     );
