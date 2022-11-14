@@ -8,6 +8,7 @@ import 'viewmodel/auth_viewmodel.dart';
 
 import 'viewmodel/local_storage_viewmodel.dart';
 import 'view/show_delivery_details_screen.dart';
+import 'viewmodel/location_viewmodel.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,6 +25,9 @@ void main() async {
         ),
         ListenableProvider<DatabaseViewModel>(
           create: (context) => DatabaseViewModel(),
+        ),
+        ListenableProvider<LocationViewModel>(
+          create: (context) => LocationViewModel(),
         ),
       ],
       child: const MyApp(),

@@ -1,9 +1,5 @@
-import 'package:delivery_person_app_mvvm/core/color_schema.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
 import '/view/widgets/orders_details.dart';
-import '/viewmodel/auth_viewmodel.dart';
 
 class ShowDeliveryDetailsScreen extends StatefulWidget {
   const ShowDeliveryDetailsScreen({Key? key}) : super(key: key);
@@ -33,6 +29,8 @@ class _ShowDeliveryDetailsScreenState extends State<ShowDeliveryDetailsScreen> {
       child: Scaffold(
         body: scaffoldBody.elementAt(_index),
         bottomNavigationBar: BottomNavigationBar(
+          selectedItemColor: Colors.deepOrange,
+          unselectedItemColor: Colors.grey,
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.map),
