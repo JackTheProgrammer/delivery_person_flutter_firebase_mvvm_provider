@@ -2,13 +2,13 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'view/auth_screen.dart';
-import 'viewmodel/database_viewmodel.dart';
-import 'viewmodel/auth_viewmodel.dart';
+import 'view/screens/auth_screen.dart';
+import 'view/viewmodel/database_viewmodel.dart';
+import 'view/viewmodel/auth_viewmodel.dart';
 
-import 'viewmodel/local_storage_viewmodel.dart';
-import 'view/show_delivery_details_screen.dart';
-import 'viewmodel/location_viewmodel.dart';
+import 'view/viewmodel/local_storage_viewmodel.dart';
+import 'view/screens/show_delivery_details_screen.dart';
+import 'view/viewmodel/location_viewmodel.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

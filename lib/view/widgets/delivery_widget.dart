@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '/view/order_path_screen.dart';
-import '/viewmodel/location_viewmodel.dart';
+import '../screens/order_path_screen.dart';
+import '../viewmodel/location_viewmodel.dart';
 
 class DeliveryWidget extends StatefulWidget {
   final String item;

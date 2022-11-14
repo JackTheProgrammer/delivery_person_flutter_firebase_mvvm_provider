@@ -4,9 +4,9 @@ import 'package:email_validator/email_validator.dart' show EmailValidator;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '/core/color_schema.dart';
-import '/viewmodel/auth_viewmodel.dart';
-import '/view/show_delivery_details_screen.dart';
+import '../../core/constants/color_schema.dart';
+import '../viewmodel/auth_viewmodel.dart';
+import 'show_delivery_details_screen.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({Key? key}) : super(key: key);

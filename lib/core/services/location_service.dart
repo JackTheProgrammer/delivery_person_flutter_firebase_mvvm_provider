@@ -7,8 +7,8 @@ import 'package:geolocator/geolocator.dart'
 import 'package:google_maps_flutter/google_maps_flutter.dart'
     show LatLng, Polyline, PolylineId, Marker, MarkerId, BitmapDescriptor;
 
-import '/core/google_map_config.dart';
-import '/model/delivery.dart';
+import '../constants/google_map_config.dart';
+import '../model/delivery.dart';
 
 class LocationService {
   final List<LatLng> _polylineCoordinates = <LatLng>[];
