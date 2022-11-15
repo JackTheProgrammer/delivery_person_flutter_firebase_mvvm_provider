@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '/view/widgets/orders_details.dart';
+import '/ui/widgets/orders_details.dart';
 
 class ShowDeliveryDetailsScreen extends StatefulWidget {
   const ShowDeliveryDetailsScreen({Key? key}) : super(key: key);

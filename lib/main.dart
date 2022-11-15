@@ -2,12 +2,12 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'view/screens/auth_screen.dart';
+import 'ui/screens/auth_screen.dart';
 import 'core/viewmodel/database_viewmodel.dart';
 import 'core/viewmodel/auth_viewmodel.dart';
 
 import 'core/viewmodel/local_storage_viewmodel.dart';
-import 'view/screens/show_delivery_details_screen.dart';
+import 'ui/screens/show_delivery_details_screen.dart';
 import 'core/viewmodel/location_viewmodel.dart';
 
 void main() async {

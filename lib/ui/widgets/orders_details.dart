@@ -8,7 +8,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:provider/provider.dart';
 
 import '../../core/model/delivery.dart';
-import '/view/widgets/delivery_widget.dart';
+import '/ui/widgets/delivery_widget.dart';
 import '../../core/viewmodel/database_viewmodel.dart';
 import '../../core/viewmodel/location_viewmodel.dart';
 
