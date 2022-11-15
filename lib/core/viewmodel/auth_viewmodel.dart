@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../core/services/firebase_auth_service.dart';
-import '../../core/services/local_storage_service.dart';
+import '../services/firebase_auth_service.dart';
+import '../services/local_storage_service.dart';
 
 class AuthViewModel extends ChangeNotifier {
   final FirebaseAuthService _firebaseAuthService = FirebaseAuthService();

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../core/services/local_storage_service.dart';
+import '../services/local_storage_service.dart';
 
 class LocalStorageViewModel extends ChangeNotifier {
   final LocalStorageServices _localStorageServices = LocalStorageServices();
