@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart'
     show QuerySnapshot, DocumentSnapshot;
 import 'package:flutter/material.dart';
 
-import '../services/cloud_firestore_services.dart';
+import '../../core/services/cloud_firestore_services.dart';
 
 class DatabaseViewModel extends ChangeNotifier {
   final CloudFirestoreStorageService _firestoreStorageService =

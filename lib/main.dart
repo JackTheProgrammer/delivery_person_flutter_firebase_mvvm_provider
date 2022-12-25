@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'ui/screens/auth_screen.dart';
-import 'core/viewmodel/database_viewmodel.dart';
-import 'core/viewmodel/auth_viewmodel.dart';
+import 'ui/viewmodel/database_viewmodel.dart';
+import 'ui/viewmodel/auth_viewmodel.dart';
 
-import 'core/viewmodel/local_storage_viewmodel.dart';
+import 'ui/viewmodel/local_storage_viewmodel.dart';
 import 'ui/screens/show_delivery_details_screen.dart';
-import 'core/viewmodel/location_viewmodel.dart';
+import 'ui/viewmodel/location_viewmodel.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
